@@ -14,17 +14,17 @@ httpServer.listen(config.httpPort, () => {
     console.log(`The server is listening on port ${config.httpPort}`);
 });
 
-const httpsServerOptions = {
-    'key' : fs.readFileSync('./https/key.pem'),
-    'cert': fs.readFileSync('./https/cert.pem')
-};
-var httpsServer = https.createServer(httpsServerOptions, (req, res) => {
-    unifiedServer(req, res);
-});
+// const httpsServerOptions = {
+//     'key' : fs.readFileSync('./https/key.pem'),
+//     'cert': fs.readFileSync('./https/cert.pem')
+// };
+// var httpsServer = https.createServer(httpsServerOptions, (req, res) => {
+//     unifiedServer(req, res);
+// });
 
-httpsServer.listen(config.httpsPort, () => {
-    console.log(`The server is listening on port ${config.httpsPort}`);
-});
+// httpsServer.listen(config.httpsPort, () => {
+//     console.log(`The server is listening on port ${config.httpsPort}`);
+// });
 
 // All the server logics belon to here
 var unifiedServer = function (req, res) {
